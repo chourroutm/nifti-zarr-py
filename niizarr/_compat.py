@@ -80,7 +80,7 @@ def _open_zarr(
 
     if not isinstance(out, StoreLike):
         if fsspec:
-            out = FsspecStore(out, mode=mode, **store_opt)
+            out = FsspecStore(out, **store_opt)
         else:
             out = LocalStore(out, **store_opt)
     if mode == "w":
